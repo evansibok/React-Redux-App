@@ -4,17 +4,17 @@ import { getPotter } from "../redux/actionCreators";
 import PotterCard from "./potterCard";
 
 export function PotterList({ potter, getPotter }) {
-  console.log(potter)
-  debugger
+  
   useEffect(() => {
     getPotter();
   }, []);
 
   return (
     <div>
-      {potter && potter.map(potts => (
-        <PotterCard key={potts._id} potts={potts}/>
-      ))}
+      <h1>List of Harry Potter Characters</h1>
+      <h3>Displayed using Async Redux</h3>
+      {potter &&
+        potter.map(potts => <PotterCard key={potts._id} potts={potts} />)}
     </div>
   );
 }
