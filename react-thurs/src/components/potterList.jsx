@@ -4,9 +4,10 @@ import { getPotter } from "../redux/actionCreators";
 import PotterCard from "./potterCard";
 
 export function PotterList({ potter, getPotter }) {
-  // useEffect(() => {
-  //   getPotter();
-  // }, [])
+  debugger
+  useEffect(() => {
+    getPotter();
+  }, [getPotter]);
 
   return (
     <div>
@@ -19,7 +20,7 @@ export function PotterList({ potter, getPotter }) {
 
 function mapStateToProps(state) {
   return {
-    potter: state.potter
+    potter: state.potter,
   };
 }
 
