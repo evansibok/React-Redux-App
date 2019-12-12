@@ -1,13 +1,42 @@
 import * as types from '../redux/actionTypes'
-// STEP 1 - Create initial slice of state
-const initialState = 0;
 
-// Step 3 - One reducer function per slice of state
-export function countReducer(count = initialState, action) {
+const initialPotter = [
+  {
+    "_id": "5a0fa4daae5bc100213c232e",
+    "name": "Hannah Abbott",
+    "role": "student",
+    "house": "Hufflepuff",
+    "school": "Hogwarts School of Witchcraft and Wizardry",
+    "__v": 0,
+    "ministryOfMagic": false,
+    "orderOfThePhoenix": false,
+    "dumbledoresArmy": true,
+    "deathEater": false,
+    "bloodStatus": "half-blood",
+    "species": "human"
+  },
+  {
+    "_id": "5a0fa5deae5bc100213c2330",
+    "name": "Ludo Bagman",
+    "role": "Head, Department of Magical Games and Sports",
+    "__v": 0,
+    "ministryOfMagic": true,
+    "orderOfThePhoenix": false,
+    "dumbledoresArmy": false,
+    "deathEater": false,
+    "bloodStatus": "unknown",
+    "species": "human"
+  },
+]
+
+export function potterReducer(potter = initialPotter, action){
   switch (action.type) {
-    case types.INCREMENT:
-      return count + 1;
+    case types.GET_POTTER:
+      return {
+        ...potter,
+        payload: action.payload,
+      };
     default:
-      return count
+      return potter;
   }
 }

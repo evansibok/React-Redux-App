@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 
-
-import Counter from './components/Counter'
+import PotterList from './components/potterList'
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      <PotterList />
     </div>
   );
 }

@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 import * as reducers from '../src/redux/reducers'
 
 const rootReducer = combineReducers({
-  count: reducers.countReducer,
+  potter: reducers.potterReducer,
 });
 
 
