@@ -23,7 +23,7 @@ export function PotterList({ potter, getPotter }) {
       <h3>Displayed using Async Redux</h3>
       <ListCon>
         {potter &&
-          potter.map(potts => <PotterCard key={potts._id} potts={potts} />)
+          potter.map(potts => (<PotterCard key={potts._id} potts={potts} />))
         }
       </ListCon>
     </div>
