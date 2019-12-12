@@ -9,15 +9,16 @@ import * as serviceWorker from './serviceWorker';
 import * as reducers from '../src/redux/reducers'
 
 const rootReducer = combineReducers({
-	count: reducers.countReducer,
+  count: reducers.countReducer,
 });
 
 const store = createStore(rootReducer)
 
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>, document.getElementById('root'));
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

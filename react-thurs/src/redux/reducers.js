@@ -4,10 +4,10 @@ const initialState = 0;
 
 // Step 3 - One reducer function per slice of state
 export function countReducer(count = initialState, action) {
-	switch (action.type) {
-		case types.INCREMENT:
-			return count + 1;
-		default:
-			return count
-	}
+  switch (action.type) {
+    case types.INCREMENT:
+      return count + 1;
+    default:
+      return count
+  }
 }
