@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, compose, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -12,7 +13,15 @@ const rootReducer = combineReducers({
   count: reducers.countReducer,
 });
 
-const store = createStore(rootReducer)
+
+const store = createStore(
+  rootReducer,
+  {},
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  ),
+);
 
 ReactDOM.render(
   <Provider store={store}>
