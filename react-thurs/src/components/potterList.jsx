@@ -4,14 +4,15 @@ import { getPotter } from "../redux/actionCreators";
 import PotterCard from "./potterCard";
 
 export function PotterList({ potter, getPotter }) {
+  console.log(potter)
   debugger
   useEffect(() => {
     getPotter();
-  }, [getPotter]);
+  }, []);
 
   return (
     <div>
-      {potter.map(potts => (
+      {potter && potter.map(potts => (
         <PotterCard key={potts._id} potts={potts}/>
       ))}
     </div>

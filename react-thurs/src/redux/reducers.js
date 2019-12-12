@@ -4,10 +4,7 @@ const initialPotter = [];
 export function potterReducer(potter = initialPotter, action){
   switch (action.type) {
     case types.GET_POTTER:
-      return {
-        ...potter,
-        payload: action.payload,
-      };
+      return action.payload;
     default:
       return potter;
   }

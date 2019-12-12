@@ -14,6 +14,6 @@ export const getPotter = () => dispatch => {
     })
     .catch(error => {
       debugger
-      alert(error.message)
+      return error.message
     })
 }
